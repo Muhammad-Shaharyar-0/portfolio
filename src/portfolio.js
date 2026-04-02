@@ -4,7 +4,7 @@ const header = {
 }
 
 const about = {
-  name: 'Usama Hassan',
+  name: 'Muhammad Shaharyar',
   role: 'Unity Game Developer | Multiplayer & XR',
   picture: '/profile-images/1.png',
 
