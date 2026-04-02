@@ -1,10 +1,10 @@
 const header = {
-  homepage: 'https://usama-hassan-944.github.io/portfolio/',
+  homepage: 'https://muhammad-shaharyar-0.github.io/portfolio/',
   title: 'UH.',
 }
 
 const about = {
-  name: 'Usama Hassan',
+  name: 'Muhammad Shaharyar',
   role: 'Unity Game Developer | Multiplayer & XR',
   picture: '/profile-images/1.png',
 
@@ -13,7 +13,7 @@ const about = {
   resume: '/resume/Usama_Hassan_Resume_1.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/usama-hassan-505b3a1a4/',
-    github: 'https://github.com/Usama-Hassan-944',
+    github: 'https://github.com/Muhammad-Shaharyar-0',
   },
 }
 
