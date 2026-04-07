@@ -1,10 +1,10 @@
 const header = {
-  homepage: 'https://usama-hassan-944.github.io/portfolio/',
+  homepage: 'https://muhammad-shaharyar-0.github.io/portfolio/',
   title: 'UH.',
 }
 
 const about = {
-  name: 'Usama Hassan',
+  name: 'Muhammad Shaharyar',
   role: 'Unity Game Developer | Multiplayer & XR',
   picture: '/profile-images/1.png',
 
