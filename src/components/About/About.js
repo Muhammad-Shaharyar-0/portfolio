@@ -76,7 +76,7 @@ import './About.css'
 // export default About
 
 const About = () => {
-  const { name, role, description, resume, social, picture } = about
+  const { name, role, description, resume, showResume, social, picture } = about
 
   // compute image src safely
   let imageSrc = ''
@@ -110,7 +110,7 @@ const About = () => {
       </div>
 
       <div className='about__contact center'>
-        {resume && (
+        {resume && showResume && (
           <a
             href={`${process.env.PUBLIC_URL}${resume}`}
             target='_blank'

@@ -1,16 +1,17 @@
 const header = {
   homepage: 'https://muhammad-shaharyar-0.github.io/portfolio/',
-  title: 'UH.',
+  title: 'MS.',
 }
 
 const about = {
   name: 'Muhammad Shaharyar',
   role: 'Unity Game Developer | Multiplayer & XR',
-  picture: '/profile-images/1.png',
+  picture: '/profile-images/3.png',
 
   description:
     'I’m a game developer with over 5 years of professional experience building gameplay systems and immersive experiences across multiple platforms. I primarily work with Unity and C#, and have contributed to both shipped and prototype projects ranging from multiplayer and co-op games to Web3 titles, mixed reality experiences, casual and hypercasual games. I enjoy tackling technical challenges, designing clean and scalable systems, and turning ideas into engaging, player-focused experiences.',
   resume: '/resume/Usama_Hassan_Resume_1.pdf',
+  showResume: false,
   social: {
     linkedin: 'https://www.linkedin.com/in/aboutshaharyar/',
     github: 'https://github.com/Muhammad-Shaharyar-0',
@@ -235,7 +236,7 @@ const skills = [
 
 
 const contact = {
-  email: 'usamahassan944@gmail.com',
+  email: 'shaheryar1963@gmail.com',
 }
 
 export { header, about, projects, skills, contact }
