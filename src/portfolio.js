@@ -9,7 +9,7 @@ const about = {
   picture: '/profile-images/3.png',
 
   description:
-    'I’m a game developer with over 5 years of professional experience building gameplay systems and immersive experiences across multiple platforms. I primarily work with Unity and C#, and have contributed to both shipped and prototype projects ranging from multiplayer and co-op games to Web3 titles, mixed reality experiences, casual and hypercasual games. I enjoy tackling technical challenges, designing clean and scalable systems, and turning ideas into engaging, player-focused experiences.',
+    'I’m a game developer with over 4 years of professional experience building gameplay systems and immersive experiences across multiple platforms. I primarily work with Unity and C#, but am proficient with Unreal 5 and C++ as well, and have contributed to both shipped and prototype projects ranging from multiplayer and co-op games to Web3 titles, mixed reality experiences, casual and hypercasual games. I enjoy tackling technical challenges, designing clean and scalable systems, and turning ideas into engaging, player-focused experiences.',
   resume: '/resume/Usama_Hassan_Resume_1.pdf',
   showResume: false,
   social: {
