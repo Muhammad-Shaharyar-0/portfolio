@@ -12,10 +12,9 @@
   display: flex;
   flex-direction: row; /* image LEFT, text RIGHT */
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 3rem;
+  margin-bottom: 1.1rem;
   width: 100%;
-  margin-left: em;
 }
 
 .about__picture {
@@ -31,8 +30,6 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-
-  
 }
 
 .about__name {
@@ -48,28 +45,33 @@
 }
 
 .about__desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   max-width: 600px;
   margin-top: 2.4em;
+
 }
 
 .about__contact {
-  margin-top: 2.4em;
+  margin-top: 2.5em;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5em;
+  gap: 1.0em;
 }
 
 .about .link--icon {
   margin-right: 0.5em;
   color: var(--clr-fg);
   transition: color 0.2s ease;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 }
 
 .about .link--icon:hover {
   color: var(--clr-primary);
+}
+
+.about__social-icons .link--icon svg {
+  font-size: 1.9rem;  /* increase this to make them bigger */
 }
 
 .about .btn--outline {

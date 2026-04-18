@@ -9,10 +9,6 @@
   min-width: 0; /* FIX: allow flex item to shrink */
 }
 
-.project:hover {
-   transform: translateY(-7px);
-  box-shadow: 0 0 20px rgba(204, 0, 0, 0.4); /* red glow */
-}
 
 .project__image {
   width: 100%;
