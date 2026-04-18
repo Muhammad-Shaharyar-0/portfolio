@@ -5,7 +5,7 @@ const header = {
 
 const about = {
   name: 'Muhammad Shaharyar',
-  role: 'Game Programmer | Multiplayer & XR',
+  role: 'Game Programmer',
   picture: '/profile-images/3.png',
 
   description:
