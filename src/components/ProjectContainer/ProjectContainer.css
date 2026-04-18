@@ -90,7 +90,9 @@
 
 .project__video {
   width: 100%;
-  height: auto;
+  height: auto;        /* let it size naturally */
+  max-height: 80vh;    /* but never taller than 80% of screen */
+  object-fit: contain; /* show full video without cropping */
   display: block;
   background: #000;
 }
