@@ -81,9 +81,9 @@
   align-items: center;
   margin-right: 4em;
   margin-left: 3em;
-   font-size: 1.05rem;
+  font-size: 1.05rem;
+  text-transform: capitalize;
 }
-
 
 
 .about__image {
@@ -98,11 +98,12 @@
 }
 
 .about__keyblade {
-  width: 30px;
-  height: 28px;
+  width: 33px;
+  height: 33px;
   object-fit: contain;
-  margin-right: 10px;
+  margin-right: 8px;
   vertical-align: middle;
+  mix-blend-mode: lighten; /* removes dark background */
 }
 
 /* Tablet */
