@@ -38,6 +38,7 @@
   font-weight: 450;
   font-size: 0.79rem;
   color: var(--clr-fg-alt);
+  border-radius: 20px;
 }
 
 .project .link--icon {

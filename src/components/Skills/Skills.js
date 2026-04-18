@@ -8,13 +8,25 @@ const Skills = () => {
   return (
     <section className='section skills' id='skills'>
       <h2 className='section__title'>Skills</h2>
-      <ul className='skills__list'>
-        {skills.map((skill) => (
-          <li key={uniqid()} className='skills__list-item btn btn--plain'>
-            {skill}
-          </li>
+
+      <div className='skills__categories'>
+        {skills.map((group) => (
+          <div key={uniqid()} className='skills__category'>
+            {/* Category title */}
+            <h4 className='skills__category-title'>
+              {group.category}
+            </h4>
+            {/* Skills in this category */}
+            <ul className='skills__list'>
+              {group.items.map((skill) => (
+                <li key={uniqid()} className='skills__list-item'>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

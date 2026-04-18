@@ -160,7 +160,7 @@ const About = () => {
       rel='noopener noreferrer'
       className='btn btn--outline'
     >
-      🎮 Favourite Games
+      🎮 My Favourite Games
     </a>
   )}
 </div>

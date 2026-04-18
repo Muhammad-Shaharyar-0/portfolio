@@ -8,7 +8,7 @@
 }
 
 .dark {
-  --clr-bg: #1a1a1a;       /* deep black like Persona 5 */
+  --clr-bg: #0d0d0d;       /* deep black like Persona 5 */
   --clr-bg-alt: #1a1a1a;      /* slightly lighter black for cards */
   --clr-fg: #e8e8e8;          /* light text */
   --clr-fg-alt: #FFD700;      /* gold for headings — One Piece/Yakuza */
