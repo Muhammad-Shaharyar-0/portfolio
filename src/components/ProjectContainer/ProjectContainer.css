@@ -4,10 +4,14 @@
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  overflow: hidden; /* FIX: contain all content */
+  word-wrap: break-word; /* FIX: wrap long words */
+  min-width: 0; /* FIX: allow flex item to shrink */
 }
 
 .project:hover {
-  transform: translateY(-7px);
+   transform: translateY(-7px);
+  box-shadow: 0 0 20px rgba(204, 0, 0, 0.4); /* red glow */
 }
 
 .project__image {
@@ -19,6 +23,7 @@
 
 .project__description {
   margin-top: 1em;
+  font-size: 0.95rem; /* FIX: slightly smaller for readability in cards */
 }
 
 .project__stack {
@@ -30,8 +35,8 @@
 
 .project__stack-item {
   margin: 0.5em;
-  font-weight: 500;
-  font-size: 0.8rem;
+  font-weight: 450;
+  font-size: 0.79rem;
   color: var(--clr-fg-alt);
 }
 
@@ -91,4 +96,15 @@
   height: auto;
   display: block;
   background: #000;
+}
+
+/* FIX: reduce modal padding on mobile */
+@media (max-width: 600px) {
+  .project__video-overlay {
+    padding: 0.5rem;
+  }
+
+  .project {
+    padding: 1.4em;
+  }
 }

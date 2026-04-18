@@ -109,43 +109,61 @@ const About = () => {
         </div>
       </div>
 
-      <div className='about__contact center'>
-        {resume && showResume && (
+      <div className='about__contact'>
+  {/* LEFT button */}
+  {showResume && resume && (
+    <a
+      href={resume}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='btn btn--outline'
+    >
+      Resume
+    </a>
+  )}
+
+  {/* MIDDLE icons */}
+  <div className='about__social-icons'>
+    {social && (
+      <>
+        {social.github && (
           <a
-            href={`${process.env.PUBLIC_URL}${resume}`}
+            href={social.github}
+            aria-label='github'
+            className='link link--icon'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <span type='button' className='btn btn--outline'>
-              Resume
-            </span>
+            <GitHubIcon />
           </a>
         )}
-
-        {social && (
-          <>
-            {social.github && (
-              <a
-                href={social.github}
-                aria-label='github'
-                className='link link--icon'
-              >
-                <GitHubIcon />
-              </a>
-            )}
-
-            {social.linkedin && (
-              <a
-                href={social.linkedin}
-                aria-label='linkedin'
-                className='link link--icon'
-              >
-                <LinkedInIcon />
-              </a>
-            )}
-          </>
+        {social.linkedin && (
+          <a
+            href={social.linkedin}
+            aria-label='linkedin'
+            className='link link--icon'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <LinkedInIcon />
+          </a>
         )}
-      </div>
+      </>
+    )}
+  </div>
+
+  {/* RIGHT button */}
+  {social.favouriteGames && (
+    <a
+      href={social.favouriteGames}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='btn btn--outline'
+    >
+      🎮 Favourite Games
+    </a>
+  )}
+</div>
     </div>
   )
 }

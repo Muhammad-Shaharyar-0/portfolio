@@ -1,13 +1,26 @@
+.projects {
+  width: 75vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1rem;
+}
+
 .projects__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* FIX: was space-between, changed to center */
   gap: 1rem;
   margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .projects__scroller-wrap {
   position: relative;
+  padding: 0 3rem; /* space for arrows */
+  max-width: 100%;
+  overflow: hidden;
+
 }
 
 .projects__scroller {
@@ -15,11 +28,13 @@
   overflow-y: hidden;
   padding-bottom: 0.5rem;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  
 }
 
 .projects__scroller::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
 .projects__row {
@@ -29,13 +44,10 @@
 }
 
 .projects__row .project {
-  flex: 0 0 320px;
-  max-width: 360px;
+  flex: 0 0 clamp(240px, 30vw, 345px);
+  max-width: clamp(240px, 30vw, 345px);
+  min-width: 240px;
   scroll-snap-align: start;
-}
-
-.projects__scroller {
-  scroll-snap-type: x mandatory;
 }
 
 .projects__arrow {
@@ -43,7 +55,6 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-
   border: 1px solid var(--clr-primary);
   background: var(--clr-bg);
   color: var(--clr-primary);
@@ -53,7 +64,6 @@
   font-size: 1.6rem;
   cursor: pointer;
   box-shadow: var(--shadow);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,9 +77,55 @@
 }
 
 .projects__arrow--left {
-  left: -10px;
+  left: 0;
 }
 
 .projects__arrow--right {
-  right: -10px;
+  right: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .projects__row .project {
+    flex: 0 0 340px;
+    max-width: 340px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .projects {
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding: 0;
+  }
+
+  .projects__scroller-wrap {
+    padding: 0 2.5rem;
+    overflow: hidden; /* FIX: added overflow hidden to wrapper */
+  }
+
+  .projects__scroller {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0.5rem 0.5rem 0.5rem; /* FIX: added side padding */
+  }
+
+  .projects__arrow {
+    width: 28px; /* FIX: slightly smaller arrows */
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .projects__row .project {
+    flex: 0 0 calc(100vw - 7rem); /* FIX: reduced from 5rem to 7rem */
+    max-width: calc(100vw - 7rem);
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .projects__header {
+    padding: 0 0.5rem;
+  }
 }

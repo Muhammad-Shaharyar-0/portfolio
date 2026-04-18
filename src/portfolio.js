@@ -5,16 +5,17 @@ const header = {
 
 const about = {
   name: 'Muhammad Shaharyar',
-  role: 'Unity Game Developer | Multiplayer & XR',
+  role: 'Game Programmer | Multiplayer & XR',
   picture: '/profile-images/3.png',
 
   description:
     'I’m a game developer with over 4 years of professional experience building gameplay systems and immersive experiences across multiple platforms. I primarily work with Unity and C#, but am proficient with Unreal 5 and C++ as well, and have contributed to both shipped and prototype projects ranging from multiplayer and co-op games to Web3 titles, mixed reality experiences, casual and hypercasual games. I enjoy tackling technical challenges, designing clean and scalable systems, and turning ideas into engaging, player-focused experiences.',
-  resume: '/resume/Muhammad_Shaharyar_Resume.pdf',
-  showResume: false,
+  resume: 'https://drive.google.com/file/d/12SmGOqPSKkzb4ZZ0gBRfEeyRFEk_qTAB/view?usp=sharing',
+  showResume: true,
   social: {
     linkedin: 'https://www.linkedin.com/in/aboutshaharyar/',
     github: 'https://github.com/Muhammad-Shaharyar-0',
+    favouriteGames: 'https://www.grouvee.com/user/108085-ZeXXuS/shelves/591562-favorites/',
   },
 }
 
@@ -81,6 +82,63 @@ const projects = [
     image: '/project-images/HorseRacing.png',
   },
   {
+    name: 'The Search for Warren',
+    description:
+      'A real-time multiplayer tower defence game built in Unity with Photon Fusion. Features custom AI, NFT integration via MetaMask, and a self-hosted server/client architecture where all calculations are handled server-side to prevent simulation mismatch. Built entirely from scratch using OOP principles with a fully modular event-driven architecture.',
+    stack: [
+      'Unity',
+      'C#',
+      'Photon Fusion',
+      'Tower Defence Systems',
+      'Custom AI Implementation',
+      'NFT Integration (MetaMask)',
+      'Self-Hosted Server Architecture',
+      'Modular Event-Driven Design',
+    ],
+    sourceCode: '',
+    livePreview: '',
+    video: 'SearchForWarren.mp4', // replace with your actual filename
+    image: '/project-images/SearchForWarren.png', // replace with your actual filename
+  },
+  {
+    name: 'Hand Gesture Recognition VR',
+    description:
+      'A hand gesture recognition system for Oculus Quest 2 using an Artificial Neural Network to interpret gestures in real time within a VR environment. Unity handles the VR side while a Python backend processes gestures through a local server, with a modular architecture allowing new gestures to be added at runtime.',
+    stack: [
+      'Unity',
+      'C#',
+      'Python',
+      'Artificial Neural Network (ANN)',
+      'Oculus Quest 2',
+      'Real-Time Gesture Processing',
+      'Local Server Communication',
+      'Modular Architecture',
+    ],
+    sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Hand-Guesture-Recognition-VR',
+    livePreview: '',
+    video: 'HandGestureVR.mp4', // replace with your actual filename
+    image: '/project-images/HandGestureVR.png', // replace with your actual filename
+  },
+  {
+    name: 'Texas Holdem',
+    description:
+      'Co-Developed this multiplayer mobile poker game supporting up to six players per table with real-time synchronized gameplay. Features multiple room configurations with varying buy-in values and gameplay modes, persistent player data, authentication, and social features. Implements turn-based betting logic, server-synchronized game states, and secure session management for fair and consistent gameplay across clients.',
+    stack: [
+      'Unity',
+      'C#',
+      'Photon PUN2',
+      'Turn-Based Game Logic',
+      'Room & Matchmaking Systems',
+      'Firebase (Auth & Database)',
+      'Social Logins (Google, Facebook)',
+      'In-Game Chat & Voice Systems',
+    ],
+    sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Poker_Texas_Holdem',
+    livePreview: '',
+    video: 'TexasHoldem.mp4',
+    image: '/project-images/TexasHoldem.PNG',
+  },
+  {
     name: 'Emergency Ops: Drive to Rescue',
     description:
       'A multi-phase simulation combining shop management (inventory, shelf stocking, autonomous customer AI) with mission-based emergency operations. Players prepare resources, then deploy specialized vehicles (fire truck, ambulance, etc.) to resolve dynamic rescue missions. Built with scalable, data-driven architecture and structured AI workflows.',
@@ -138,25 +196,7 @@ const projects = [
     video: 'CanYouRetire.mp4',
     image: '/project-images/CanYouRetire.PNG',
   },
-  {
-    name: 'Texas Holdem',
-    description:
-      'Co-Developed this multiplayer mobile poker game supporting up to six players per table with real-time synchronized gameplay. Features multiple room configurations with varying buy-in values and gameplay modes, persistent player data, authentication, and social features. Implements turn-based betting logic, server-synchronized game states, and secure session management for fair and consistent gameplay across clients.',
-    stack: [
-      'Unity',
-      'C#',
-      'Photon PUN2',
-      'Turn-Based Game Logic',
-      'Room & Matchmaking Systems',
-      'Firebase (Auth & Database)',
-      'Social Logins (Google, Facebook)',
-      'In-Game Chat & Voice Systems',
-    ],
-    sourceCode: '',
-    livePreview: '',
-    video: 'TexasHoldem.mp4',
-    image: '/project-images/TexasHoldem.PNG',
-  },
+
   {
     name: 'Maze',
     description:
@@ -211,27 +251,85 @@ const projects = [
     video: 'Ophelia.mp4',
     image: '/project-images/Ophelia.PNG',
   },
+  {
+  name: 'Chess AI',
+  description:
+    'A chess game implemented in Python with Player vs Player and Player vs AI modes, featuring a fully working GUI. The AI uses the MinMax algorithm with alpha-beta pruning, evaluating board states using piece values combined with positional values relative to placement. Developed as an AI semester project.',
+  stack: [
+    'Python',
+    'MinMax Algorithm',
+    'Alpha-Beta Pruning',
+    'State Evaluation',
+    'tkinter GUI',
+  ],
+  sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Chess', // add github link if you have one
+  livePreview: '',
+  video: 'Chess.mp4', // replace with your actual filename
+  image: '/project-images/Chess.png', // replace with your actual filename
+  },
+  {
+    name: 'Snake — x86 Assembly',
+    description:
+      'A full recreation of the classic Nokia Snake game built entirely in x86 16-bit Real Mode Assembly targeting DOS. Features direct VGA text-mode video memory manipulation, custom Interrupt Service Routines for keyboard and timer, Sound Blaster DSP audio with embedded WAV data, two difficulty levels, dynamic speed scaling and collision detection via direct memory reads.',
+    stack: [
+      'x86 Assembly (NASM)',
+      '16-bit Real Mode',
+      'DOS .COM Executable',
+      'VGA Memory Manipulation',
+      'Custom ISR (Keyboard & Timer)',
+      'Sound Blaster DSP',
+      'Low-Level Hardware Programming',
+    ],
+    sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Snake-Game', // add github link if you have one
+    livePreview: '',
+    video: 'SnakeAssembly.mp4', // replace with your actual filename
+    image: '/project-images/SnakeAssembly.png', // replace with your actual filename
+  },
 ]
 
 const skills = [
-  'Unity',
+// Programming Languages & Frameworks
   'C#',
   'C++',
   'Python',
+  '.NET',
+  'Node.js',
   'JavaScript',
   'SQL',
+
+  // Game Engines
+  'Unity',
+  'Unreal Engine 5',
+
+  // Multiplayer & Networking
   'Photon (Fusion & Pun2)',
   'Netcode for GameObjects',
+  'Network Programming',
+
+  // XR & Mobile
   'Mixed Reality (MR)',
   'VR/AR Interaction Systems',
-  'Voice/Text Chat Systems',
+  'XR and Mobile Development',
+
+  // Backend & Cloud
   'AWS (Backend & Hosting)',
-  'Custom Backend APIs',
-  'Unity Multiplay',
-  'PlayFab',
   'Firebase',
+  'Azure PlayFab',
+  'Unity Multiplay',
+  'Custom Backend APIs',
   'Social Platform APIs (Meta, Apple, Google Play)',
+
+  // AI & Systems
+  'AI and Physics Programming',
+  'Voice/Text Chat Systems',
+  'Game Engine Development',
+
+  // Tools & DevOps
   'Git',
+  'GitHub',
+  'Perforce',
+  'Jenkins',
+  'Jira',
 ]
 
 
