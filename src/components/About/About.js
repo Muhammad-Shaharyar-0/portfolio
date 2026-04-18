@@ -2,6 +2,9 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../../portfolio'
 import './About.css'
+import aboutBg from '../../Images/persona1.png'
+import keyblade from '../../Images/keyblade.png'
+
 
 // const About = () => {
 //   const { name, role, description, resume, social, picture } = about
@@ -89,10 +92,11 @@ const About = () => {
       imageSrc = `${process.env.PUBLIC_URL}/images/${picture}`
     }
   }
-
+   
   return (
     <div className='about center'>
       <div className='about__header'>
+        {/* <img src={aboutBg} alt='' className='about__image' /> */}
         {picture && (
           <img src={imageSrc} alt={name} className='about__picture' />
         )}
@@ -118,6 +122,7 @@ const About = () => {
       rel='noopener noreferrer'
       className='btn btn--outline'
     >
+      <img src={keyblade} alt='' className='about__keyblade' />
       Resume
     </a>
   )}
