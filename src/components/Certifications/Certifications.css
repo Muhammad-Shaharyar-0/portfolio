@@ -1,0 +1,56 @@
+.certs {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.certs__title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+}
+
+.certs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+  gap: 24px;
+}
+
+.cert {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert__provider {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cert__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.cert__detail {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.cert__link {
+  align-self: flex-start;
+  margin-top: 8px;
+  min-height: 44px;
+  font-size: 0.875rem;
+}

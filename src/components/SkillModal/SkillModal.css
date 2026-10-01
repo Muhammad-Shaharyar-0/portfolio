@@ -1,0 +1,101 @@
+.skillmodal__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  padding-top: 8px;
+}
+
+.skillmodal__count {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.skillmodal__body {
+  padding: 8px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillmodal__row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-2);
+  color: var(--fg);
+}
+
+.skillmodal__row:hover {
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.skillmodal__thumb {
+  display: block;
+  width: 96px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.skillmodal__thumb--code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #16161a;
+  color: var(--fg);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.skillmodal__text {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.skillmodal__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skillmodal__kind {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.skillmodal__go {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.skillmodal__empty {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #b8b8c2;
+}
+
+.skillmodal__filter {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .skillmodal__go {
+    display: none;
+  }
+
+  .skillmodal__body {
+    padding: 8px 16px 20px;
+  }
+}

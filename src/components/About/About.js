@@ -1,107 +1,117 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import { about } from '../../portfolio'
-import './About.css'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import keyblade from '../../Images/keyblade.png'
+import crown from '../../Images/crown.png'
+import { about, contact } from '../../portfolio'
+import { track } from '../../analytics'
+import './About.css'
 
+const imageUrl = (path) =>
+  path && path.startsWith('/') ? `${process.env.PUBLIC_URL}${path}` : path
 
 const About = () => {
-  const { name, role, description, resume, showResume, social, picture } = about
+  const { name, role, description, picture, currently, stats, resume, social } = about
 
-  let imageSrc = ''
-  if (picture) {
-    if (picture.startsWith('http')) {
-      imageSrc = picture
-    } else if (picture.startsWith('/')) {
-      imageSrc = `${process.env.PUBLIC_URL}${picture}`
-    } else {
-      imageSrc = `${process.env.PUBLIC_URL}/images/${picture}`
-    }
-  }
-   
   return (
-    <div className='about center'>
-      <div className='about__header'>
-        {picture && (
-          <img
-            src={imageSrc}
-            alt={name}
-            className='about__picture'
-            width='180'
-            height='180'
-            decoding='async'
-          />
-        )}
-
-        <div className='about__intro'>
-          {name && (
-            <h1>
-              <span className='about__name'>{name}.</span>
-            </h1>
-          )}
-
-          {role && <h2 className='about__role'>{role}</h2>}
+    <section className='about'>
+      <div className='about__top'>
+        <div className='about__panel'>
+          <div className='eyebrow'>{role}</div>
+          <h1 className='about__name'>{name}</h1>
           <p className='about__desc'>{description}</p>
+          <div className='about__buttons'>
+            {resume && (
+              <a
+                href={resume}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn btn--primary'
+                onClick={() => track('link/resume', 'Resume (hero)')}
+              >
+                <img src={keyblade} alt='' aria-hidden='true' className='btn__icon btn__icon--key' width='22' height='19' />
+                Download resume
+              </a>
+            )}
+            {social.linkedin && (
+              <a
+                href={social.linkedin}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn btn--ghost'
+                onClick={() => track('link/linkedin', 'LinkedIn (hero)')}
+              >
+                <LinkedInIcon fontSize='small' />
+                LinkedIn
+              </a>
+            )}
+            {social.github && (
+              <a
+                href={social.github}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn btn--ghost'
+                onClick={() => track('link/github', 'GitHub (hero)')}
+              >
+                <GitHubIcon fontSize='small' />
+                GitHub
+              </a>
+            )}
+            <a
+              href={`mailto:${contact.email}`}
+              className='btn btn--ghost'
+              onClick={() => track('link/email', 'Email (hero)')}
+            >
+              <MailOutlineIcon fontSize='small' />
+              Email me
+            </a>
+            {social.favouriteGames && (
+              <a
+                href={social.favouriteGames}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn btn--ghost'
+                onClick={() => track('link/favourite-games', 'Favourite games')}
+              >
+                <img src={crown} alt='' aria-hidden='true' className='btn__icon' width='28' height='18' />
+                Favourite games
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div className='about__side'>
+          {picture && (
+            <img
+              src={imageUrl(picture)}
+              alt={`Illustrated portrait of ${name}`}
+              className='about__picture'
+              width='540'
+              height='360'
+              decoding='async'
+            />
+          )}
+          <div className='about__currently'>
+            <div className='about__currently-title'>Currently…</div>
+            {currently.map((item) => (
+              <div key={item.title}>
+                <div className='about__role-title'>{item.title}</div>
+                <div className='about__role-place'>{item.place}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className='about__contact'>
-  {/* LEFT button */}
-  {showResume && resume && (
-    <a
-      href={resume}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='btn btn--outline'
-    >
-      <img src={keyblade} alt='' className='about__keyblade' />
-      Resume
-    </a>
-  )}
-
-  {/* MIDDLE icons */}
-  <div className='about__social-icons'>
-    {social && (
-      <>
-        {social.github && (
-          <a
-            href={social.github}
-            aria-label='github'
-            className='link link--icon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <GitHubIcon />
-          </a>
-        )}
-        {social.linkedin && (
-          <a
-            href={social.linkedin}
-            aria-label='linkedin'
-            className='link link--icon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <LinkedInIcon />
-          </a>
-        )}
-      </>
-    )}
-  </div>
-
-  {/* RIGHT button */}
-  {social && social.favouriteGames && (
-    <a
-      href={social.favouriteGames}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='btn btn--outline'
-    >
-      🎮 My Favourite Games
-    </a>
-  )}
-</div>
-    </div>
+      <div className='about__stats'>
+        {stats.map((stat) => (
+          <div key={stat.value} className='about__stat'>
+            <div className='about__stat-value'>{stat.value}</div>
+            <div className='about__stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 

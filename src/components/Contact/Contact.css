@@ -1,3 +1,108 @@
-.contact {
+.contact__panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact__text {
+  flex: 1 1 300px;
+  display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.contact__title {
+  align-self: flex-start;
+  position: relative;
+  isolation: isolate;
+  padding: 4px 22px;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contact__title::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent);
+  transform: skewX(-10deg) rotate(-1deg);
+}
+
+/* Phantom Thief calling card: decorative only, never overlaps content */
+.contact__card {
+  flex: none;
+  width: 112px;
+  height: auto;
+  padding: 10px;
+  background: #f1e7d0;
+  transform: rotate(8deg);
+  opacity: 0.9;
+  pointer-events: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1000px) {
+  .contact__card {
+    display: none;
+  }
+}
+
+.contact__text p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #b8b8c2;
+  max-width: 52ch;
+}
+
+.contact__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .contact__panel {
+    padding: 28px 22px;
+  }
+}
+
+/* Witcher 3: faint sword art fading in from the right edge, behind the content */
+.contact__panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: url('../../Images/witcher-swords.webp') right center / cover no-repeat;
+  opacity: 0.4;
+  -webkit-mask-image: linear-gradient(to left, #000 20%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 20%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact__text,
+.contact__buttons,
+.contact__card {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .contact__panel::after {
+    width: 180px;
+    opacity: 0.25;
+  }
 }
