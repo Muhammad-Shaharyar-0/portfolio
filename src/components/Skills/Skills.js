@@ -1,4 +1,3 @@
-import uniqid from 'uniqid'
 import { skills } from '../../portfolio'
 import './Skills.css'
 
@@ -11,7 +10,7 @@ const Skills = () => {
 
       <div className='skills__categories'>
         {skills.map((group) => (
-          <div key={uniqid()} className='skills__category'>
+          <div key={group.category} className='skills__category'>
             {/* Category title */}
             <h4 className='skills__category-title'>
               {group.category}
@@ -19,7 +18,7 @@ const Skills = () => {
             {/* Skills in this category */}
             <ul className='skills__list'>
               {group.items.map((skill) => (
-                <li key={uniqid()} className='skills__list-item'>
+                <li key={skill} className='skills__list-item'>
                   {skill}
                 </li>
               ))}

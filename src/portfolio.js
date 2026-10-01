@@ -6,7 +6,7 @@ const header = {
 const about = {
   name: 'Muhammad Shaharyar',
   role: 'Game Programmer',
-  picture: '/profile-images/3.png',
+  picture: '/profile-images/3.webp',
 
   description:
     'Hi, I’m a game programmer with over 4 years of professional experience building gameplay systems and immersive experiences across multiple platforms. I primarily work with Unity and C#, but am proficient with Unreal 5 and C++ as well, and have contributed to both shipped and prototype projects ranging from multiplayer and co-op games to Web3 titles, mixed reality experiences, casual and hypercasual games. I enjoy tackling technical challenges, designing clean and scalable systems, and turning ideas into engaging, player-focused experiences.',
@@ -36,7 +36,7 @@ const projects = [
     livePreview:
       'https://www.meta.com/en-gb/experiences/nexus-arcade/6962116033836064/?require_login=true',
     video: 'Nexus_Arcade.mp4',
-    image: '/project-images/Nexus_Arcade.png',
+    image: '/project-images/Nexus_Arcade.webp',
   },
   {
     name: 'Animalia',
@@ -56,8 +56,7 @@ const projects = [
     sourceCode: '',
     livePreview: 'https://animalia.games/',
     video: 'Animalia.mp4',
-    // NOTE: your file is `Animalia.PNG` (uppercase extension) in public/project-images
-    image: '/project-images/Animalia.PNG',
+    image: '/project-images/Animalia.webp',
   },
   {
     name: 'Thunder Horse Racing',
@@ -75,7 +74,7 @@ const projects = [
     livePreview:
       'https://play.google.com/store/apps/details?id=com.multiplayer.thunder.horse.racing&hl=en',
     video: '',
-    image: '/project-images/HorseRacing.png',
+    image: '/project-images/HorseRacing.webp',
   },
   {
     name: 'The Search for Warren',
@@ -92,8 +91,8 @@ const projects = [
     ],
     sourceCode: '',
     livePreview: '',
-    video: 'SearchForWarren.mp4', // replace with your actual filename
-    image: '/project-images/SearchForWarren.png', // replace with your actual filename
+    video: 'SearchForWarren.mp4',
+    image: '/project-images/SearchForWarren.webp',
   },
   {
     name: 'Hand Gesture Recognition VR',
@@ -109,15 +108,15 @@ const projects = [
     ],
     sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Hand-Guesture-Recognition-VR',
     livePreview: '',
-    video: 'HandGestureVR.mp4', // replace with your actual filename
-    image: '/project-images/HandGestureVR.png', // replace with your actual filename
+    video: 'HandGestureVR.mp4',
+    image: '/project-images/HandGestureVR.webp',
   },
   {
     name: 'Texas Holdem',
     description:
       'Co-Developed this multiplayer mobile poker game supporting up to six players per table with real-time synchronized gameplay. Features multiple room configurations with varying buy-in values and gameplay modes, persistent player data, authentication, and social features. Implements turn-based betting logic, server-synchronized game states, and secure session management for fair and consistent gameplay across clients.',
     stack: [
-  'Unity C#',
+      'Unity C#',
       'Photon PUN2',
       'Turn-Based Game Logic',
       'Room & Matchmaking Systems',
@@ -128,14 +127,14 @@ const projects = [
     sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Poker_Texas_Holdem',
     livePreview: '',
     video: 'TexasHoldem.mp4',
-    image: '/project-images/TexasHoldem.PNG',
+    image: '/project-images/TexasHoldem.webp',
   },
   {
     name: 'Emergency Ops: Drive to Rescue',
     description:
       'A multi-phase simulation combining shop management (inventory, shelf stocking, autonomous customer AI) with mission-based emergency operations. Players prepare resources, then deploy specialized vehicles (fire truck, ambulance, etc.) to resolve dynamic rescue missions. Built with scalable, data-driven architecture and structured AI workflows.',
     stack: [
-  'Unity C#',
+      'Unity C#',
       'Simulation Systems Design',
       'AI Behavior Systems',
       'Command & Queue-Based Architectures',
@@ -146,14 +145,14 @@ const projects = [
     livePreview:
       'https://apps.apple.com/uy/app/emergency-ops-drive-to-rescue/id6748608256',
     video: '',
-    image: '/project-images/Emergency_Ops.png',
+    image: '/project-images/Emergency_Ops.webp',
   },
   {
     name: 'Skid Rush - Car Race',
     description:
       'A fast-paced endless racing game inspired by double-drift mechanics, expanded with multiple modes including One Lane, Two Lane, Time Bomb, Speed Test, and AI Multiplayer. Focuses on responsive driving, adaptive AI opponents, and runtime procedural generation for obstacles, power-ups, and road segments.',
     stack: [
-  'Unity C#',
+      'Unity C#',
       'Adaptive AI Systems',
       'Procedural Content Generation',
       'Runtime Level Generation',
@@ -163,7 +162,7 @@ const projects = [
     livePreview:
       'https://apps.apple.com/us/app/skid-rush-car-race/id6748746985',
     video: '',
-    image: '/project-images/SkidRush.png',
+    image: '/project-images/SkidRush.webp',
   },
   {
     name: 'Can You Retire?',
@@ -180,7 +179,7 @@ const projects = [
     sourceCode: '',
     livePreview: '',
     video: 'CanYouRetire.mp4',
-    image: '/project-images/CanYouRetire.PNG',
+    image: '/project-images/CanYouRetire.webp',
   },
 
   {
@@ -188,7 +187,7 @@ const projects = [
     description:
       'A 3D casual game where players navigate progressively challenging maze environments while avoiding multiple AI-controlled enemies with distinct behavior patterns. Features proximity-based chaser enemies and radar-based sentry enemies using line-of-sight detection, plus a customized physics-based character controller built on Puppet Master for dynamic, physics-driven interactions.',
     stack: [
-  'Unity C#',
+      'Unity C#',
       'AI Behavior Systems',
       'State Machines',
       'Puppet Master (Customized)',
@@ -198,14 +197,14 @@ const projects = [
     sourceCode: '',
     livePreview: '',
     video: 'Maze.mp4',
-    image: '/project-images/Maze.PNG',
+    image: '/project-images/Maze.webp',
   },
   {
     name: 'Ball Bash',
     description:
       'Co-Developed a hyper-casual arcade game where players guide a continuous flow of physics-driven balls through dynamic, obstacle-filled paths to the goal. Players draw runtime meshes to block, redirect, or open routes, affecting how many balls reach the end. Features varied layouts (bumps, cut sections, gaps, jump ramps) and a performance-based reward/progression loop.',
     stack: [
-    'Unity C#',
+      'Unity C#',
       'Hyper-Casual Game Design',
       'Physics-Based Gameplay',
       'Runtime Mesh Generation',
@@ -216,14 +215,14 @@ const projects = [
     livePreview:
       'https://play.google.com/store/apps/details?id=com.SynergyGames.BashingBalls&pli=1',
     video: 'BallBash.mp4',
-    image: '/project-images/BallBash.PNG',
+    image: '/project-images/BallBash.webp',
   },
   {
     name: 'Ophelia',
     description:
       'Co-Developed a first-person mystery puzzle game focused on exploration, environmental storytelling, and clue-based progression. Set within a dark, castle-like environment, players investigate their surroundings, uncover hidden clues, and solve puzzles to advance through interconnected levels. Features an inventory system for collecting and reviewing narrative items such as books and medieval-style scrolls.',
     stack: [
-  'Unity C#',
+      'Unity C#',
       'Puzzle Design',
       'Inventory Systems',
       'Level Design',
@@ -231,7 +230,7 @@ const projects = [
     sourceCode: '',
     livePreview: '',
     video: 'Ophelia.mp4',
-    image: '/project-images/Ophelia.PNG',
+    image: '/project-images/Ophelia.webp',
   },
   {
   name: 'Chess AI',
@@ -244,10 +243,10 @@ const projects = [
     'State Evaluation',
     'tkinter GUI',
   ],
-  sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Chess', // add github link if you have one
+  sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Chess',
   livePreview: '',
-  video: 'Chess.mp4', // replace with your actual filename
-  image: '/project-images/Chess.png', // replace with your actual filename
+  video: 'Chess.mp4',
+  image: '/project-images/Chess.webp',
   },
   {
     name: 'Snake — x86 Assembly',
@@ -262,10 +261,10 @@ const projects = [
       'Sound Blaster DSP',
       'Low-Level Hardware Programming',
     ],
-    sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Snake-Game', // add github link if you have one
+    sourceCode: 'https://github.com/Muhammad-Shaharyar-0/Snake-Game',
     livePreview: '',
-    video: 'SnakeAssembly.mp4', // replace with your actual filename
-    image: '/project-images/SnakeAssembly.png', // replace with your actual filename
+    video: 'SnakeAssembly.mp4',
+    image: '/project-images/SnakeAssembly.webp',
   },
 ]
 

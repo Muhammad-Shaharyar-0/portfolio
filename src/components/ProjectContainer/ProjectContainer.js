@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 import OndemandVideoIcon from '@material-ui/icons/OndemandVideo'
@@ -47,6 +46,8 @@ const ProjectContainer = ({ project }) => {
           src={imageSrc}
           alt={`${project.name} screenshot`}
           className='project__image'
+          loading='lazy'
+          decoding='async'
         />
       )}
 
@@ -57,7 +58,7 @@ const ProjectContainer = ({ project }) => {
       {project.stack && (
         <ul className='project__stack'>
           {project.stack.map((item) => (
-            <li key={uniqid()} className='project__stack-item'>
+            <li key={item} className='project__stack-item'>
               {item}
             </li>
           ))}
@@ -120,6 +121,8 @@ const ProjectContainer = ({ project }) => {
               className='project__video'
               controls
               autoPlay
+              playsInline
+              preload='metadata'
               onClick={(e) => e.stopPropagation()}
             >
               <source src={videoSrc} />
