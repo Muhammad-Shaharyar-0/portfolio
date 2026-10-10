@@ -3,9 +3,11 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew'
 import { track } from '../../analytics'
 import './ProjectContainer.css'
 
-const ProjectContainer = ({ project, highlighted, onPlay }) => {
-  const { id, title, kind, description, image, fit, position, background, video, tags, links } =
-    project
+const ProjectContainer = ({ project, highlighted, onPlay, onBreakdown }) => {
+  const {
+    id, title, kind, description, role, facts, image, placeholder, fit, position, background, video, tags,
+    links, breakdown,
+  } = project
   const imageSrc = image ? `${process.env.PUBLIC_URL}${image}` : null
 
   const thumb = imageSrc ? (
@@ -19,8 +21,8 @@ const ProjectContainer = ({ project, highlighted, onPlay }) => {
     />
   ) : (
     <div className='project__code'>
-      <span className='project__code-mark'>C++</span>
-      <span>Source on GitHub</span>
+      <span className='project__code-mark'>{placeholder ? placeholder.mark : 'C++'}</span>
+      <span>{placeholder ? placeholder.text : 'Source on GitHub'}</span>
     </div>
   )
 
@@ -54,7 +56,22 @@ const ProjectContainer = ({ project, highlighted, onPlay }) => {
       <div className='project__body'>
         <div className='project__kind'>{kind}</div>
         <h3 className='project__title'>{title}</h3>
+        {role && (
+          <p className='project__role'>
+            <span>My role</span> {role}
+          </p>
+        )}
         <p className='project__desc'>{description}</p>
+        {facts && (
+          <dl className='project__facts'>
+            {facts.map(([label, value]) => (
+              <div key={label} className='project__fact'>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
         <ul className='project__tags'>
           {tags.map((tag) => (
             <li key={tag} className='project__tag'>
@@ -62,8 +79,17 @@ const ProjectContainer = ({ project, highlighted, onPlay }) => {
             </li>
           ))}
         </ul>
-        {links.length > 0 && (
+        {(links.length > 0 || breakdown) && (
           <div className='project__links'>
+            {breakdown && (
+              <button
+                type='button'
+                className='project__link project__link--primary'
+                onClick={() => onBreakdown(project)}
+              >
+                More details
+              </button>
+            )}
             {links.map((link) => (
               <a
                 key={link.url}

@@ -5,24 +5,43 @@ import { track } from '../../analytics'
 import useSectionTracking from '../../useSectionTracking'
 import ProjectContainer from '../ProjectContainer/ProjectContainer'
 import VideoModal from '../VideoModal/VideoModal'
+import BreakdownModal from '../BreakdownModal/BreakdownModal'
 import './Projects.css'
 
 const Projects = ({ request }) => {
   const sectionRef = useRef(null)
   const [filter, setFilter] = useState('All')
   const [video, setVideo] = useState(null)
+  const [detail, setDetail] = useState(null)
   const [highlight, setHighlight] = useState(null)
   useSectionTracking(sectionRef, 'projects')
 
-  const countOf = (key) => projects.filter((p) => p.keys.includes(key)).length
-  const chips = ['All', ...filterOrder.filter((key) => countOf(key) > 0)]
+  // Filters that match exactly the same projects are merged into one chip.
+  const idsOf = (key) =>
+    projects
+      .filter((p) => p.keys.includes(key))
+      .map((p) => p.id)
+      .join()
+  const groups = []
+  filterOrder.forEach((key) => {
+    const sig = idsOf(key)
+    if (!sig) return
+    const label = filterLabels[key] || key
+    const group = groups.find((g) => g.sig === sig)
+    if (group) group.labels.push(label)
+    else groups.push({ key, sig, labels: [label] })
+  })
+  const canonical = (key) => {
+    const group = groups.find((g) => g.sig === idsOf(key))
+    return group ? group.key : key
+  }
   const visible = filter === 'All' ? projects : projects.filter((p) => p.keys.includes(filter))
 
   // Requests from the Skills section: filter by a skill, or jump to one project.
   useEffect(() => {
     if (!request) return undefined
     if (request.type === 'filter') {
-      setFilter(request.key)
+      setFilter(canonical(request.key))
       setHighlight(null)
       const el = document.getElementById('projects')
       if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -52,25 +71,38 @@ const Projects = ({ request }) => {
     setVideo(project)
   }, [])
   const closeVideo = useCallback(() => setVideo(null), [])
+  const openDetail = useCallback((project) => {
+    track(`breakdown/${project.id}`, `Breakdown: ${project.title}`)
+    setDetail(project)
+  }, [])
+  const closeDetail = useCallback(() => setDetail(null), [])
 
   return (
     <section id='projects' className='section projects' ref={sectionRef}>
       <div className='eyebrow'>I · Selected work</div>
       <h2 className='section__title'>Projects</h2>
       <p className='section__intro'>
-        Filter by what each project was built with. Click a thumbnail to watch the demo.
+        Filter by what each project was built with. Click a thumbnail to watch the demo, or open more details to see what I built.
       </p>
 
       <div className='projects__filters' role='group' aria-label='Filter projects by skill'>
-        {chips.map((key) => (
+        <button
+          type='button'
+          className={`chip${filter === 'All' ? ' chip--active' : ''}`}
+          aria-pressed={filter === 'All'}
+          onClick={() => pick('All')}
+        >
+          All
+        </button>
+        {groups.map((group) => (
           <button
-            key={key}
+            key={group.key}
             type='button'
-            className={`chip${filter === key ? ' chip--active' : ''}`}
-            aria-pressed={filter === key}
-            onClick={() => pick(key)}
+            className={`chip${filter === group.key ? ' chip--active' : ''}`}
+            aria-pressed={filter === group.key}
+            onClick={() => pick(group.key)}
           >
-            {filterLabels[key] || key}
+            {group.labels.join(' / ')}
           </button>
         ))}
       </div>
@@ -82,6 +114,7 @@ const Projects = ({ request }) => {
             project={project}
             highlighted={highlight === project.id}
             onPlay={play}
+            onBreakdown={openDetail}
           />
         ))}
       </div>
@@ -104,6 +137,7 @@ const Projects = ({ request }) => {
       </div>
 
       {video && <VideoModal project={video} onClose={closeVideo} />}
+      {detail && <BreakdownModal project={detail} onClose={closeDetail} />}
     </section>
   )
 }

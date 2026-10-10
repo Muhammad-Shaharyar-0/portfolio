@@ -1,0 +1,133 @@
+.breakdown {
+  width: min(760px, 100%);
+}
+
+.breakdown__eyebrow {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 8px;
+}
+
+.breakdown__title {
+  padding-top: 4px;
+}
+
+.breakdown__role {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #d6d6de;
+}
+
+.breakdown__body {
+  padding: 8px 28px 28px;
+}
+
+.breakdown__note {
+  margin: 8px 0 4px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--panel-2);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e4e4ea;
+}
+
+.breakdown__section {
+  margin-top: 18px;
+}
+
+.breakdown__heading {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.breakdown__list {
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.breakdown__list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d6d6de;
+}
+
+.breakdown__list li::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .breakdown__body {
+    padding: 8px 18px 22px;
+  }
+}
+
+.breakdown__about {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #e4e4ea;
+}
+
+.breakdown__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breakdown__tech li {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--panel-2);
+  color: #e8e8ee;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.breakdown__heading--lead {
+  margin: 26px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.breakdown__subheading {
+  margin: 14px 0 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+.breakdown__feature {
+  margin-top: 14px;
+}
+
+.breakdown__feature .breakdown__subheading {
+  margin: 0 0 4px;
+}
+
+.breakdown__text {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #d6d6de;
+}
+
+.breakdown__feature .breakdown__list {
+  margin-top: 2px;
+}
+
+.breakdown__feature .breakdown__list li {
+  margin-bottom: 4px;
+}

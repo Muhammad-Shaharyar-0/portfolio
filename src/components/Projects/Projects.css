@@ -7,9 +7,21 @@
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 32px;
+}
+
+@media (min-width: 680px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1040px) {
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .projects__note {
@@ -30,5 +42,5 @@
   max-width: 72ch;
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #b8b8c2;
+  color: #d6d6de;
 }

@@ -11,7 +11,7 @@ const imageUrl = (path) =>
   path && path.startsWith('/') ? `${process.env.PUBLIC_URL}${path}` : path
 
 const About = () => {
-  const { name, role, description, picture, currently, stats, resume, social } = about
+  const { name, role, description, picture, currently, education, stats, resume, social } = about
 
   return (
     <section className='about'>
@@ -97,6 +97,18 @@ const About = () => {
               <div key={item.title}>
                 <div className='about__role-title'>{item.title}</div>
                 <div className='about__role-place'>{item.place}</div>
+              </div>
+            ))}
+          </div>
+          <div className='about__currently about__education'>
+            <div className='about__currently-title'>Education</div>
+            {education.map((item) => (
+              <div key={item.title}>
+                <div className='about__role-title'>{item.title}</div>
+                <div className='about__role-place'>
+                  {item.place}
+                  {item.note ? ` · ${item.note}` : ''}
+                </div>
               </div>
             ))}
           </div>
